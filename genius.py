@@ -94,7 +94,10 @@ def addCoresRespota(valor):
     listaCoresPlayer.append(valor)
     print(listaCoresPlayer)
 
+    #quantidade de elementos de cada lista sejam iguais, e diferentes de 0
     if len(listaCores) == len(listaCoresPlayer) and len(listaCores) != 0:
+
+        #caso as listas sejam iguais o usuario acertou o padrao
         if listaCores == listaCoresPlayer:
             #eleva o nivel e recomeça a sequencia
             messagebox.showinfo('','V O C Ê  A C E R T O U  !')
@@ -103,9 +106,7 @@ def addCoresRespota(valor):
             #limpa a lista anterior
             listaCores.clear()
 
-            #atualiza o nivel para o usuário
-            lblNivel['text'] = str(nivel)
-
+            #continua jogando almentando o nivel
             start()
 
         else:
@@ -115,6 +116,10 @@ def addCoresRespota(valor):
 
             #apaga e reconstroi a tela
             reconstruct()
+
+    if len(listaCoresPlayer) != 0:
+        #atualiza o nivel para o usuário
+        lblNivel['text'] = str(nivel)
 
 def construct():
 
@@ -161,7 +166,7 @@ def construct():
     btYellow = Button(text='', width='15', height='10', bg='yellow', command= lambda: addCoresRespota(4))
     btYellow.place(x=420,y=240)
 
-    btInicioJogo = Button(text='Start', width='20', height='2', font='Courier 20 bold', command=start)
+    btInicioJogo = Button(text='Start', width='20', height='2', font='Courier 20 bold', bg='orange', command=start)
     btInicioJogo.place(x=240, y=450)
 
     lblNomeNivel = Label(text='', font='Courier 20 bold', fg='white', bg='black')
