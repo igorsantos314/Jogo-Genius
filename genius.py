@@ -112,6 +112,7 @@ def addCoresRespota(valor):
         else:
             #reconstroi a tela e zera o nivel
             messagebox.showinfo('','V O C Ê  P E R D E U !')
+            #th.start_new_thread(louse,())
             nivel = 1
 
             #apaga e reconstroi a tela
@@ -120,6 +121,19 @@ def addCoresRespota(valor):
     if len(listaCoresPlayer) != 0:
         #atualiza o nivel para o usuário
         lblNivel['text'] = str(nivel)
+
+"""def louse():
+    perder = Tk()
+    #perder.geometry('100x100')
+    perder.title(' N Ã O  F O I  D E S S A  V E Z  :(')
+
+    lblPerdeu = Label(perder, text=' T E N T E  N O V A M E N T E  ...')
+    lblPerdeu.pack()
+
+    sleep(3)
+    perder.destroy()
+    
+    perder.mainloop()"""
 
 def construct():
 
