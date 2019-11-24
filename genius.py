@@ -8,6 +8,9 @@ janela = Tk()
 janela.geometry('800x800')
 janela['background'] = 'black'
 
+#listaCores
+Colors = []
+
 def start():
     #aparecer o nivel para o usuário
     lblNomeNivel['text'] = 'Nivel: '
@@ -43,22 +46,25 @@ def mudarCor(indBotao):
     elif indBotao == 4:
         btYellow['bg'] = 'yellow'
 
+def addCorSequencia(n):
+    Colors.append(n)
+
 def movimento():
     #modifica a cor spera 1seg --> e zera novamente
-    for i in range(nivel):
-        sleep(1)
-        
-        numeroAleatorio = randint(1,4)
-        #print(numeroAleatorio)
-        mudarCor(numeroAleatorio)
-        addCores(numeroAleatorio)
+    numeroAleatorio = randint(1,4)
+    addCorSequencia(numeroAleatorio)
 
-        sleep(1)
+    for i in Colors:
+        sleep(0.8)
+        #print(numeroAleatorio)
+        mudarCor(i)
+        #addCores(numeroAleatorio)
+        sleep(0.8)
         zerarCores()
 
     #volta as cores default
     setColorOrigin()
-    messagebox.showinfo('GENIUS','É A SUA VEZ!')
+    messagebox.showinfo('GENIUS','É  A  S U A  V E Z !')
 
     #retira o botão de inicio de jogo
     btInicioJogo.destroy()
@@ -91,19 +97,19 @@ def addCoresRespota(valor):
 
     #adiciona o valor da respota do usuario na lista
     listaCoresPlayer.append(valor)
-    print(listaCoresPlayer)
+    #print(listaCoresPlayer)
 
     #quantidade de elementos de cada lista sejam iguais, e diferentes de 0
-    if len(listaCores) == len(listaCoresPlayer) and len(listaCores) != 0:
+    if len(Colors) == len(listaCoresPlayer) and len(Colors) != 0:
 
         #caso as listas sejam iguais o usuario acertou o padrao
-        if listaCores == listaCoresPlayer:
+        if Colors == listaCoresPlayer:
             #eleva o nivel e recomeça a sequencia
             messagebox.showinfo('','V O C Ê  A C E R T O U  !')
             nivel += 1
 
             #limpa a lista anterior
-            listaCores.clear()
+            #listaCores.clear()
 
             #continua jogando almentando o nivel
             start()
@@ -111,6 +117,7 @@ def addCoresRespota(valor):
         else:
             #reconstroi a tela e zera o nivel
             messagebox.showinfo('','V O C Ê  P E R D E U !')
+            Colors.clear()
             #th.start_new_thread(louse,())
             nivel = 1
 
@@ -133,19 +140,6 @@ def addCoresRespota(valor):
     perder.destroy()
     
     perder.mainloop()"""
-
-def tipoJogo():
-
-    tJogo = Tk()
-    tJogo.title('Tipo do Jogo')
-
-    btFacil = Button(text='Easy', command=construct)
-    btFacil.pack()
-
-    btDificil = Button(text='Hard', command=construct)
-    btDificil.pack()
-
-    tJogo.mainloop()
 
 def construct():
     #tJogo.destroy()
