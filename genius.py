@@ -8,7 +8,6 @@ janela = Tk()
 janela.geometry('800x800')
 janela['background'] = 'black'
 
-
 def start():
     #aparecer o nivel para o usuário
     lblNomeNivel['text'] = 'Nivel: '
@@ -50,7 +49,7 @@ def movimento():
         sleep(1)
         
         numeroAleatorio = randint(1,4)
-        print(numeroAleatorio)
+        #print(numeroAleatorio)
         mudarCor(numeroAleatorio)
         addCores(numeroAleatorio)
 
@@ -66,7 +65,7 @@ def movimento():
 
     #limpa a lista de cores dos jogadores
     listaCoresPlayer.clear()
-    print(listaCores)
+    #print(listaCores)
 
 def reconstruct():
     #ocultar Nivel
@@ -135,7 +134,22 @@ def addCoresRespota(valor):
     
     perder.mainloop()"""
 
+def tipoJogo():
+
+    tJogo = Tk()
+    tJogo.title('Tipo do Jogo')
+
+    btFacil = Button(text='Easy', command=construct)
+    btFacil.pack()
+
+    btDificil = Button(text='Hard', command=construct)
+    btDificil.pack()
+
+    tJogo.mainloop()
+
 def construct():
+    #tJogo.destroy()
+    #janela principal
 
     #Labels globais
     global lblNomeNivel
@@ -189,6 +203,7 @@ def construct():
     lblNivel = Label(text='', font='Courier 20 bold', fg='orange', bg='black')
     lblNivel.place(x=140,y=20)
 
+    
 #th.start_new_thread(movimento, (250,))
 construct()
 janela.mainloop()
