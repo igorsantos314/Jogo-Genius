@@ -5,7 +5,7 @@ from random import randint
 from tkinter import messagebox
 
 janela = Tk()
-janela.geometry('800x800')
+janela.geometry('1000x1000')
 janela['background'] = 'black'
 
 #listaCores
@@ -176,20 +176,20 @@ def construct():
     btInicioJogo.place(x=340, y=650)
     """
 
-    btBlue = Button(text='', width='15', height='10', bg='cyan', command= lambda: addCoresRespota(1))
-    btBlue.place(x=250,y=50)
+    btBlue = Button(text='', width='20', height='10', bg='cyan', command= lambda: addCoresRespota(1))
+    btBlue.place(x=350,y=250)
 
-    btGreen = Button(text='', width='15', height='10', bg='green', command= lambda: addCoresRespota(2))
-    btGreen.place(x=420,y=50)
+    btGreen = Button(text='', width='20', height='10', bg='green', command= lambda: addCoresRespota(2))
+    btGreen.place(x=520,y=250)
 
-    btRed = Button(text='', width='15', height='10', bg='red', command= lambda: addCoresRespota(3))
-    btRed.place(x=250,y=240)
+    btRed = Button(text='', width='20', height='10', bg='red', command= lambda: addCoresRespota(3))
+    btRed.place(x=350,y=440)
 
-    btYellow = Button(text='', width='15', height='10', bg='yellow', command= lambda: addCoresRespota(4))
-    btYellow.place(x=420,y=240)
+    btYellow = Button(text='', width='20', height='10', bg='yellow', command= lambda: addCoresRespota(4))
+    btYellow.place(x=520,y=440)
 
-    btInicioJogo = Button(text='Start', width='20', height='2', font='Courier 20 bold', bg='orange', command=start)
-    btInicioJogo.place(x=240, y=450)
+    btInicioJogo = Button(text='Start', width='22', height='2', font='Courier 20 bold', bg='orange', command=start)
+    btInicioJogo.place(x=330, y=650)
 
     lblNomeNivel = Label(text='', font='Courier 20 bold', fg='white', bg='black')
     lblNomeNivel.place(x=20,y=20)
